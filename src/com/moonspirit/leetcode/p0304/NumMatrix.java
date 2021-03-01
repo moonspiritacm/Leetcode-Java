@@ -1,8 +1,10 @@
 package com.moonspirit.leetcode.p0304;
 
 /**
+ * 矩阵前缀和，边界情况无须特殊处理。O(mn)+O(1) O(mn)
+ * sums[i,j]为[(0,0), (i,j))前缀和：sums[i+1][j+1] = sums[i][j+1] + nums[i+1][j] - nums[i][j]。
  * 执行用时：14 ms, 在所有 Java 提交中击败了 98.81% 的用户
- * 内存消耗：44.1 MB, 在所有 Java 提交中击败了 37.40% 的用户
+ * 内存消耗：44.3 MB, 在所有 Java 提交中击败了 14.34% 的用户
  */
 class NumMatrix {
     int[][] sums;

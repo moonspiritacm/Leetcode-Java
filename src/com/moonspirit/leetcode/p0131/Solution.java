@@ -16,8 +16,8 @@ import java.util.List;
 class Solution {
     private List<List<String>> res = new ArrayList<>();
 
-    private boolean isHuiWen(char[] chs, int l, int r) {
-        while (l <= r) {
+    private boolean isRight(char[] chs, int l, int r) {
+        while (l < r) {
             if (chs[l++] != chs[r--]) {
                 return false;
             }
@@ -25,16 +25,16 @@ class Solution {
         return true;
     }
 
-    private void helper(char[] chs, int start, List<String> ans) {
-        if (start >= chs.length) {
+    private void helper(char[] chs, int i, List<String> ans) {
+        if (i >= chs.length) {
             res.add(new ArrayList<>(ans));
             return;
         }
 
-        for (int i = start; i < chs.length; i++) {
-            if (isHuiWen(chs, start, i)) {
-                ans.add(new String(chs, start, i - start + 1));
-                helper(chs, i + 1, ans);
+        for (int j = i; j < chs.length; j++) {
+            if (isRight(chs, i, j)) {
+                ans.add(new String(chs, i, j - i + 1));
+                helper(chs, j + 1, ans);
                 ans.remove(ans.size() - 1);
             }
         }
@@ -44,6 +44,7 @@ class Solution {
         if (s == null || s.length() == 0) {
             return res;
         }
+
         helper(s.toCharArray(), 0, new ArrayList<>());
         return res;
     }

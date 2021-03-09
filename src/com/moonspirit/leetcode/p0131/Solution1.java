@@ -16,6 +16,21 @@ class Solution1 {
     private List<List<String>> res = new ArrayList<>();
     private boolean[][] dp;
 
+    private void helper(char[] chs, int i, List<String> ans) {
+        if (i >= chs.length) {
+            res.add(new ArrayList<>(ans));
+            return;
+        }
+
+        for (int j = i; j < chs.length; j++) {
+            if (dp[i][j]) {
+                ans.add(new String(chs, i, j - i + 1));
+                helper(chs, j + 1, ans);
+                ans.remove(ans.size() - 1);
+            }
+        }
+    }
+
     public List<List<String>> partition(String s) {
         if (s == null || s.length() == 0) {
             return res;
@@ -35,20 +50,5 @@ class Solution1 {
 
         helper(s.toCharArray(), 0, new ArrayList<>());
         return res;
-    }
-
-    private void helper(char[] chs, int start, List<String> ans) {
-        if (start >= chs.length) {
-            res.add(new ArrayList<>(ans));
-            return;
-        }
-
-        for (int i = start; i < chs.length; i++) {
-            if (dp[start][i]) {
-                ans.add(new String(chs, start, i - start + 1));
-                helper(chs, i + 1, ans);
-                ans.remove(ans.size() - 1);
-            }
-        }
     }
 }

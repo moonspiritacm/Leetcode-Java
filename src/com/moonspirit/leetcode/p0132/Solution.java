@@ -15,7 +15,6 @@ class Solution {
         }
 
         char[] chs = s.toCharArray();
-        int[] f = new int[chs.length];
         boolean[][] dp = new boolean[chs.length][chs.length];
         for (int i = chs.length - 1; i >= 0; i--) {
             for (int j = 0; j < chs.length; j++) {
@@ -26,6 +25,8 @@ class Solution {
                 }
             }
         }
+
+        int[] f = new int[chs.length];
         for (int i = 1; i < chs.length; i++) {
             f[i] = Integer.MAX_VALUE;
             if (dp[0][i]) {

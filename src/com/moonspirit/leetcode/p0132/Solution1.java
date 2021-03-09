@@ -3,7 +3,7 @@ package com.moonspirit.leetcode.p0132;
 /**
  * 记忆化搜索。O(n^2) O(n^2)
  * <p>
- * 执行用时：11 ms, 在所有 Java 提交中击败了 75.51% 的用户
+ * 执行用时：11 ms, 在所有 Java 提交中击败了 75.48% 的用户
  * 内存消耗：37.8 MB, 在所有 Java 提交中击败了 75.46% 的用户
  */
 class Solution1 {

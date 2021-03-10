@@ -3,7 +3,7 @@ package com.moonspirit.leetcode.p1047;
 import java.util.Stack;
 
 /**
- * 栈。O(n) O(n)
+ * 栈操作。O(n) O(n)
  * 执行用时：32 ms, 在所有 Java 提交中击败了 39.84% 的用户
  * 内存消耗：39.2 MB, 在所有 Java 提交中击败了 30.07% 的用户
  */
@@ -26,6 +26,7 @@ class Solution {
         while (!stk.isEmpty()) {
             sb.append(stk.pop());
         }
+
         return sb.reverse().toString();
     }
 }

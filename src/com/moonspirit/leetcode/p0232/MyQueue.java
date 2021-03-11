@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * 双栈模拟。均摊时间复杂度 O(1) O(n)
+ * <p>
  * 执行用时：0 ms, 在所有 Java 提交中击败了 100.00% 的用户
  * 内存消耗：36.4 MB, 在所有 Java 提交中击败了 52.73% 的用户
  */
@@ -54,10 +55,7 @@ class MyQueue {
      * Returns whether the queue is empty.
      */
     public boolean empty() {
-        if (stk1.isEmpty() && stk2.isEmpty()) {
-            return true;
-        } else {
-            return false;
-        }
+        return stk1.isEmpty() && stk2.isEmpty();
     }
 }
+

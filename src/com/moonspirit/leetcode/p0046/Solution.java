@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 简单回溯。O(n*n!) O(n)
+ * <p>
  * 执行用时：1 ms, 在所有 Java 提交中击败了 96.64% 的用户
  * 内存消耗：38.7 MB, 在所有 Java 提交中击败了 48.52% 的用户
  */

@@ -2,6 +2,8 @@ package com.moonspirit.leetcode.p0998;
 
 /**
  * 递归。
+ * 新值大于树根，新值变成跟，根称为左孩子；
+ * 新值小于树根，新值插入右子树，右子树为空则直接插入，不为空则递归。
  */
 class Solution {
     public TreeNode insertIntoMaxTree(TreeNode root, int val) {

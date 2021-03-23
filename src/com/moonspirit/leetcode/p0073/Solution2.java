@@ -3,7 +3,7 @@ package com.moonspirit.leetcode.p0073;
 /**
  * 一个标记变量。O(mn) O(1)
  * 借用第一行、第一列作为标记数组，标记变量记录第一列是否需要置零，第一行第一列记录第一行是否需要置零。
- * 需要注意数组更新顺序。
+ * 调整数组更新顺序。
  */
 class Solution2 {
     public void setZeroes(int[][] matrix) {

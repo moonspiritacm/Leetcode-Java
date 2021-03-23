@@ -23,15 +23,8 @@ class Solution3 {
             }
         }
         for (int i = 0; i < m; i++) {
-            if ((row & (1 << i)) != 0) {
-                for (int j = 0; j < n; j++) {
-                    matrix[i][j] = 0;
-                }
-            }
-        }
-        for (int j = 0; j < n; j++) {
-            if ((col & (1 << j)) != 0) {
-                for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if ((row & (1 << i)) != 0 || (col & (1 << j)) != 0) {
                     matrix[i][j] = 0;
                 }
             }

@@ -8,8 +8,8 @@ public class Solution3 {
     public int hammingWeight(int n) {
         int num = 0;
         while (n != 0) {
-            num++;
             n &= (n - 1);
+            num++;
         }
         return num;
     }

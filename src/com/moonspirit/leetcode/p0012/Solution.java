@@ -9,13 +9,13 @@ class Solution {
             return "";
         }
 
-        int[] board = new int[]{1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
-        String[] roman = new String[]{"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
+        int[] base = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] dict = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         StringBuilder sb = new StringBuilder();
-        for (int i = 12; i >= 0 && num > 0; i--) {
-            while (num >= board[i]) {
-                sb.append(roman[i]);
-                num -= board[i];
+        for (int i = 0; i < base.length && num != 0; i++) {
+            while (num >= base[i]) {
+                sb.append(dict[i]);
+                num -= base[i];
             }
         }
         return sb.toString();

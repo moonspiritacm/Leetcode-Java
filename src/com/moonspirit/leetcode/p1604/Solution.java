@@ -32,6 +32,6 @@ class Solution {
                 }
             }
         }
-        return res.sort();
+        return res;
     }
 }

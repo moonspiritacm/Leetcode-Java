@@ -45,8 +45,8 @@ class Solution {
                 }
             }
             System.out.printf("%d %d %d\n", dp[i][0], dp[i][1], dp[i][2]);
-            res = Math.max(res, dp[i][0]);
+            //res = Math.max(res, dp[i][0]);
         }
-        return res;
+        return 0;
     }
 }

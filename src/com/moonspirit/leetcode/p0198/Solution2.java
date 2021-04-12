@@ -9,17 +9,13 @@ class Solution2 {
     private int[] dp;
 
     private int helper(int[] nums, int i) {
-        if (i <= 1) {
-            return dp[i];
-        }
         if (dp[i] != -1) {
             return dp[i];
         }
 
         dp[i - 1] = helper(nums, i - 1);
         dp[i - 2] = helper(nums, i - 2);
-        dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i - 1]);
-        return dp[i];
+        return Math.max(dp[i - 1], dp[i - 2] + nums[i - 1]);
     }
 
     public int rob(int[] nums) {

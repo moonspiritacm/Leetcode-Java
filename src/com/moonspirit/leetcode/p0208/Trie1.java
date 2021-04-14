@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 哈希表。O(|S|) O(Σ|T|)
+ * 哈希表。O(|S|) O(Σ|S|)
  * 使用哈希表，在空间复杂度上略有优化。
  */
 class Trie1 {

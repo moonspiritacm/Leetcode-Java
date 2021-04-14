@@ -1,7 +1,9 @@
 package com.moonspirit.leetcode.p0208;
 
 /**
- * 固定长度数组。O(|S|) O(Σ|T|)
+ * 固定长度数组。
+ * 时间复杂度：O(|S|)，每次插入或查询的字符串长度；
+ * 空间复杂度：O(Σ|S|)，字符串长度之和。
  */
 class Trie {
     private Trie[] children;

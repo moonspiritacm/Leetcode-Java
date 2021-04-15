@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0200;
 
 /**
- * 并查集。O(mn*α(mn)) O(mn)
+ * 并查集。O(amn) O(mn)
  */
 class UnionFind {
     private int count;
@@ -23,11 +23,11 @@ class UnionFind {
         }
     }
 
-    private int find(int x) {
-        if (pre[x] == x) {
-            return x;
-        } else {
+    public int find(int x) {
+        if (pre[x] != x) {
             return find(pre[x]);
+        } else {
+            return x;
         }
     }
 
@@ -48,29 +48,28 @@ class UnionFind {
     }
 
     public int getCount() {
-        return count;
+        return this.count;
     }
 }
 
-class Solution2 {
+class SolutionD {
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }
 
+        UnionFind uf = new UnionFind(grid);
         int m = grid.length;
         int n = grid[0].length;
-        UnionFind uf = new UnionFind(grid);
-        int[][] dirt = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        int[][] dict = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
-                    grid[i][j] = '2';
                     for (int k = 0; k < 4; k++) {
-                        int ix = i + dirt[k][0];
-                        int jx = j + dirt[k][1];
-                        if (ix >= 0 && ix < m && jx >= 0 && jx < n && grid[ix][jx] == '1') {
-                            uf.union(i * n + j, ix * n + jx);
+                        int ii = i + dict[k][0];
+                        int jj = j + dict[k][1];
+                        if (ii >= 0 && ii < m && jj >= 0 && jj < n && grid[ii][jj] == '1') {
+                            uf.union(i * n + j, ii * n + jj);
                         }
                     }
                 }

@@ -1,5 +1,8 @@
 package com.moonspirit.leetcode.p0130;
 
+/**
+ * 并查集。O(amn) O(mn)
+ */
 class UnionFind {
     private int[] pre;
     private int[] rank;

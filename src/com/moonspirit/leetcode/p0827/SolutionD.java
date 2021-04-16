@@ -16,13 +16,13 @@ class UnionFind {
     public UnionFind(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
-        max = 1;
         pre = new int[m * n];
         rank = new int[m * n];
         size = new int[m * n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) {
+                    max = 1;
                     pre[i * n + j] = i * n + j;
                     size[i * n + j] = 1;
                     count++;

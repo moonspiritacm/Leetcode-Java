@@ -1,13 +1,9 @@
 package com.moonspirit.leetcode.p0027;
 
 /**
- * 双指针——交换。O(n) O(1)
- * 如果要移除的元素很少，效率会更高。
- * <p>
- * 执行用时：0 ms, 在所有 Java 提交中击败了 100.00% 的用户
- * 内存消耗：37.1 MB, 在所有 Java 提交中击败了 36.00% 的用户
+ * 交换。O(n) O(1)
  */
-class Solution {
+class SolutionB {
     public int removeElement(int[] nums, int val) {
         if (nums == null || nums.length == 0) {
             return 0;

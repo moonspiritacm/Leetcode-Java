@@ -3,7 +3,7 @@ package com.moonspirit.leetcode.p1019;
 import java.util.Stack;
 
 /**
- * 单调栈（同时存储位置和大小）。O(n) O(1)
+ * 单调栈（同时存储位置和大小）。O(n) O(n)
  */
 class SolutionA {
     public int[] nextLargerNodes(ListNode head) {

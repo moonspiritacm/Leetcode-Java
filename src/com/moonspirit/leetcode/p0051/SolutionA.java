@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 回溯。O(n!) O(n)
+ * 回溯+标记数组。O(n!) O(n)
  */
 class SolutionA {
     private List<List<String>> res;

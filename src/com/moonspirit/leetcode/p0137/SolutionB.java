@@ -2,8 +2,6 @@ package com.moonspirit.leetcode.p0137;
 
 /**
  * 逻辑电路（a、b同时计算）。O(n) O(1)
- * a = (~a)&b&x | a&(~b)&(~c)
- * b = (~a)&(b^x)
  */
 class SolutionB {
     public int singleNumber(int[] nums) {

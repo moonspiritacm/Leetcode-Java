@@ -2,7 +2,6 @@ package com.moonspirit.leetcode.p0137;
 
 /**
  * 逐位计算。O(32n) O(1)
- * 第i个二进制位是数组中所有元素的第i个二进制位之和除以3的余数。
  */
 class SolutionA {
     public int singleNumber(int[] nums) {

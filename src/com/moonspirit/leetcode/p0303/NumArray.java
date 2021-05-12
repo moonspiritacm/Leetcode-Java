@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0303;
 
 /**
- * 前缀数组。O(n)/O(1) O(1)
+ * 数组前缀和。O(n)+O(1) O(1)
  */
 class NumArray {
     private int[] sums;

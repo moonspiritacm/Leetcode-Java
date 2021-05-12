@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p1310;
 
 /**
- * 前缀数组。O(m+n) O(1)
+ * 数组前缀异或。O(m+n) O(1)
  */
 class SolutionA {
     public int[] xorQueries(int[] arr, int[][] queries) {
@@ -9,16 +9,13 @@ class SolutionA {
             return new int[0];
         }
 
+        int[] xor = new int[arr.length + 1];
         int[] res = new int[queries.length];
-        for (int i = 1; i < arr.length; i++) {
-            arr[i] ^= arr[i - 1];
+        for (int i = 0; i < arr.length; i++) {
+            xor[i + 1] = xor[i] ^ arr[i];
         }
         for (int i = 0; i < queries.length; i++) {
-            if (queries[i][0] == 0) {
-                res[i] = arr[queries[i][1]];
-            } else {
-                res[i] = arr[queries[i][0] - 1] ^ arr[queries[i][1]];
-            }
+            res[i] = xor[queries[i][0]] ^ xor[queries[i][1] + 1];
         }
         return res;
     }

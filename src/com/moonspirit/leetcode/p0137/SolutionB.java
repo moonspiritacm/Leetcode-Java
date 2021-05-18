@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0137;
 
 /**
- * 逻辑电路（a、b同时计算）。O(n) O(1)
+ * 逻辑电路（同时计算）。O(n) O(1)
  */
 class SolutionB {
     public int singleNumber(int[] nums) {

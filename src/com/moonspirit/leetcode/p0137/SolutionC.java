@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0137;
 
 /**
- * 逻辑电路（先算b，再算a）。O(n) O(1)
+ * 逻辑电路（先b再a）。O(n) O(1)
  */
 class SolutionC {
     public int singleNumber(int[] nums) {

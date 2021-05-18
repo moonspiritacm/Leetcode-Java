@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0136;
 
 /**
- * 异或运算。O(n) O(1)
+ * 位运算。O(n) O(1)
  */
 class SolutionA {
     public int singleNumber(int[] nums) {

@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 简单回溯。O(n*n!) O(n)
- * <p>
- * 执行用时：1 ms, 在所有 Java 提交中击败了 96.64% 的用户
- * 内存消耗：38.7 MB, 在所有 Java 提交中击败了 48.52% 的用户
+ * 回溯。
  */
-class Solution {
-    private List<List<Integer>> res = new ArrayList<>();
-    private List<Integer> ans = new ArrayList<>();
+class SolutionA {
+    private List<List<Integer>> res;
+    private List<Integer> ans;
     private boolean[] flag;
 
-    private void helper(int[] nums, int n) {
+    private void backtrace(int[] nums, int n) {
         if (n == nums.length) {
             res.add(new ArrayList<>(ans));
             return;
@@ -24,7 +21,7 @@ class Solution {
             if (!flag[i]) {
                 flag[i] = true;
                 ans.add(nums[i]);
-                helper(nums, n + 1);
+                backtrace(nums, n + 1);
                 ans.remove(ans.size() - 1);
                 flag[i] = false;
             }
@@ -33,11 +30,13 @@ class Solution {
 
     public List<List<Integer>> permute(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return res;
+            return new ArrayList<>();
         }
 
+        res = new ArrayList<>();
+        ans = new ArrayList<>();
         flag = new boolean[nums.length];
-        helper(nums, 0);
+        backtrace(nums, 0);
         return res;
     }
 }

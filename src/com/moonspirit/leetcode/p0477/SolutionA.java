@@ -13,11 +13,9 @@ class SolutionA {
         for (int i = 0; i < 32; i++) {
             int cnt = 0;
             for (int num : nums) {
-                if ((num >> i & 1) != 0) {
-                    cnt++;
-                }
+                cnt += num >>> i & 1;
             }
-            res += (nums.length - cnt) * cnt;
+            res += cnt * (nums.length - cnt);
         }
         return res;
     }

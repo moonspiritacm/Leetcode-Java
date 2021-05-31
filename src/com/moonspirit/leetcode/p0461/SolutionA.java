@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0461;
 
 /**
- * Brian Kernighan。O(logC) O(1)
+ * 最低位1。O(k) O(1)
  */
 class SolutionA {
     public int hammingDistance(int x, int y) {

@@ -25,8 +25,8 @@ class Solution {
                 flag[i] = true;
                 sb.append(nums[i]);
                 backtrace(nums, flag, index + 1, sb);
-                sb.delete(String.valueOf(nums[i]).length());
-                sb.remove(nums[i]);
+                //sb.delete(String.valueOf(nums[i]).length());
+                //sb.remove(nums[i]);
                 flag[i] = false;
             }
         }

@@ -57,7 +57,6 @@ class Solution {
                 flag2 = true;
             }
         }
-        if()
         return false;
     }
 }

@@ -5,22 +5,23 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 迭代。O(N) O(N-1)
+ * 迭代。O(n) O(n-1)
  */
-class Solution {
+class SolutionB {
     public List<Integer> preorder(Node root) {
-        if(root==null) {
+        if (root == null) {
             return new ArrayList<>();
         }
 
         List<Integer> res = new ArrayList<>();
         Stack<Node> stk = new Stack<>();
         stk.push(root);
-        while(!stk.isEmpty()) {
+        while (!stk.isEmpty()) {
             Node node = stk.pop();
+            List<Node> children = node.children;
             res.add(node.val);
-            for(int i=node.children.size()-1;i>=0;i--) {
-                stk.push(node.children.get(i));
+            for (int i = children.size() - 1; i >= 0; i--) {
+                stk.push(children.get(i));
             }
         }
         return res;

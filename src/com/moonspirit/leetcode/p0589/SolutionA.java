@@ -4,19 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 递归。O(N) O(N)
+ * 递归。O(n) O(n)
  */
 class SolutionA {
-    private List<Integer> res;
-
-    private void dfs(Node root) {
+    private void dfs(Node root, List<Integer> res) {
         if (root == null) {
             return;
         }
 
         res.add(root.val);
         for (Node node : root.children) {
-            dfs(node);
+            dfs(node, res);
         }
     }
 
@@ -25,8 +23,8 @@ class SolutionA {
             return new ArrayList<>();
         }
 
-        res = new ArrayList<>();
-        dfs(root);
+        List<Integer> res = new ArrayList<>();
+        dfs(root, res);
         return res;
     }
 }

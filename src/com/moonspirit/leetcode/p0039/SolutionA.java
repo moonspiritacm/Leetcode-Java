@@ -23,7 +23,7 @@ class SolutionA {
                 backtrace(candidates, target - candidates[i], i);
                 ans.remove(ans.size() - 1);
             } else {
-                break;
+                return;
             }
         }
     }

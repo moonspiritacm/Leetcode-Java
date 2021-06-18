@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 回溯+剪枝。O(n*2^n) O(n)
+ * 回溯+剪枝。O(n*2^n) O(target)
  */
 class SolutionA {
     private List<List<Integer>> res;
@@ -14,9 +14,6 @@ class SolutionA {
     private void backtrace(int[] candidates, int target, int index) {
         if (target == 0) {
             res.add(new ArrayList<>(ans));
-            return;
-        }
-        if (index == candidates.length) {
             return;
         }
 
@@ -29,7 +26,7 @@ class SolutionA {
                 backtrace(candidates, target - candidates[i], i + 1);
                 ans.remove(ans.size() - 1);
             } else {
-                break;
+                return;
             }
         }
     }

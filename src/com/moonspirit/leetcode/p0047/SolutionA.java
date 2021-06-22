@@ -10,21 +10,20 @@ import java.util.List;
 class SolutionA {
     private List<List<Integer>> res;
     private List<Integer> ans;
-    private boolean[] flag;
 
-    private void backtrace(int[] nums, int n) {
-        if (n == nums.length) {
+    private void backtrace(int[] nums, boolean[] flags, int num) {
+        if (num == nums.length) {
             res.add(new ArrayList<>(ans));
             return;
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if (!flag[i] && (i == 0 || !flag[i - 1] || nums[i - 1] != nums[i])) {
-                flag[i] = true;
+            if (!flags[i] && (i == 0 || flags[i - 1] || nums[i] != nums[i - 1])) {
+                flags[i] = true;
                 ans.add(nums[i]);
-                backtrace(nums, n + 1);
+                backtrace(nums, flags, num + 1);
                 ans.remove(ans.size() - 1);
-                flag[i] = false;
+                flags[i] = false;
             }
         }
     }
@@ -34,11 +33,10 @@ class SolutionA {
             return new ArrayList<>();
         }
 
+        Arrays.sort(nums);
         res = new ArrayList<>();
         ans = new ArrayList<>();
-        flag = new boolean[nums.length];
-        Arrays.sort(nums);
-        backtrace(nums, 0);
+        backtrace(nums, new boolean[nums.length], 0);
         return res;
     }
 }

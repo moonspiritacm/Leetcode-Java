@@ -1,8 +1,17 @@
 package com.moonspirit;
 
-import Date_pacage.Array;
+public class MaxXXX {
+    public MaxXXX() {
 
-public class MaxHeap<E extends Comparable <E>> {
+    }
+}
+    /*
+public class MaxHeap<E extends Comparable<E>> {
+    public MaxHeap() {
+
+    }
+
+
     private Array<E> data;
     public MaxHeap(int capacity) {
         data = new Array<>(capacity);
@@ -66,7 +75,4 @@ public class MaxHeap<E extends Comparable <E>> {
         siftDown(0);
         return ret;
     }
-
-
-
-}
+     */

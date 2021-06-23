@@ -1,7 +1,7 @@
 package com.moonspirit.leetcode.p0191;
 
 /**
- * 位运算。O(k) O(1)
+ * 快速找一。O(logn) O(1)
  */
 public class SolutionA {
     public int hammingWeight(int n) {

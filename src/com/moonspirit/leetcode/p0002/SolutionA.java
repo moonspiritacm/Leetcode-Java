@@ -2,6 +2,8 @@ package com.moonspirit.leetcode.p0002;
 
 /**
  * 模拟加法。O(n) O(n)
+ * 新建链表存储结果，每次循环在链表尾部添加一个新节点。
+ * 使用头结点（又称伪元结点），可以减少了链表添加/删除时边界情况的判断。
  */
 class SolutionA {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -13,7 +15,7 @@ class SolutionA {
         }
 
         ListNode dummyRoot = new ListNode();
-        ListNode curr = dummyRoot;
+        ListNode iter = dummyRoot;
         int add = 0;
         while (l1 != null || l2 != null) {
             if (l1 != null) {
@@ -24,12 +26,12 @@ class SolutionA {
                 add += l2.val;
                 l2 = l2.next;
             }
-            curr.next = new ListNode(add % 10);
-            curr = curr.next;
-            add = add / 10;
+            iter.next = new ListNode(add % 10);
+            iter = iter.next;
+            add /= 10;
         }
         if (add != 0) {
-            curr.next = new ListNode(add);
+            iter.next = new ListNode(add);
         }
         return dummyRoot.next;
     }
